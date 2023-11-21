@@ -20,13 +20,5 @@ pipeline {
                bat "docker build -t endsem.jar ."
            }
         }
-    post{
-        success{
-               echo "All Previous Stages successfully executed"
-        }
-        failure{
-               echo "Error in executing a staging"
-        }
-    }
 }
 }
