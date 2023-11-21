@@ -20,5 +20,10 @@ pipeline {
                bat "docker build -t endsem.jar ."
            }
         }
+        stage('Login'){
+           steps{
+              bat "docker login --username shreyaskumars --password shreyas12 "
+           }
+        }
 }
 }
