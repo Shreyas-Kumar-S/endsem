@@ -15,6 +15,11 @@ pipeline {
                 bat "C:\\Windows\\System32\\cmd.exe /c mvn clean test install"
             }
         }
+        stage('Imagebuild'){
+           steps{
+               bat "docker build -t endsem.jar ."
+           }
+        }
     }
     post{
         success{
