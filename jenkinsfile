@@ -25,5 +25,10 @@ pipeline {
               bat "docker login --username shreyaskumars --password shreyas12 "
            }
         }
+        stage('Taging'){
+           steps{
+               bat "docker tag endsem.jar shreyaskumars/endpushfinal:tag "
+           }
+        }
 }
 }
