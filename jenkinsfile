@@ -20,6 +20,17 @@ pipeline {
                bat "docker build -t endsem.jar ."
            }
         }
+        stage("Docker Login"){
+            steps {
+                bat "C:\\Windows\\System32\\cmd.exe /c docker login --username shreyaskumars --password Docker@shreyas12"
+            }
+        }
+        stage("Push Image"){
+            steps {
+                bat "C:\\Windows\\System32\\cmd.exe /c docker push shreyaskumars/endsem.jar"
+            }
+        }
+
     }
     post{
         success{
