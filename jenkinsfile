@@ -22,12 +22,17 @@ pipeline {
         }
         stage("Docker Login"){
             steps {
-                bat "C:\\Windows\\System32\\cmd.exe /c docker login --username shreyaskumars --password Docker@shreyas12"
+                bat "docker login --username shreyaskumars --password shreyas12"
             }
+        }
+        stage("Taging"){
+             steps{
+              bat "docker tag endsem.jar shreyaskumars/endpushfinal:tag"
+           }
         }
         stage("Push Image"){
             steps {
-                bat "C:\\Windows\\System32\\cmd.exe /c docker push shreyaskumars/endsem.jar"
+                bat "docker push shreyaskumars/endpushfinal:tag"
             }
         }
 
