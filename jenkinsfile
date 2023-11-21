@@ -20,23 +20,6 @@ pipeline {
                bat "docker build -t endsem.jar ."
            }
         }
-        stage("Docker Login"){
-            steps {
-                bat "docker login --username shreyaskumars --password shreyas12"
-            }
-        }
-        stage("Taging"){
-             steps{
-              bat "docker tag endsem.jar shreyaskumars/endpushfinal:tag"
-           }
-        }
-        stage("Push Image"){
-            steps {
-                bat "docker push shreyaskumars/endpushfinal:tag"
-            }
-        }
-
-    }
     post{
         success{
                echo "All Previous Stages successfully executed"
